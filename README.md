@@ -1,6 +1,6 @@
 # Unity Games
 
-**Some fun projects done as a part of testing Unity for game development**
+**Some fun projects done as a part of testing Unity for game development and integrating AI**
 
 * Basic obstacle game (Work in progress)
   
