@@ -33,12 +33,14 @@ public class move_cube : MonoBehaviour
             rb.AddForce(sidewaysForce* Time.deltaTime,0, 0, ForceMode.VelocityChange);
         else if(Input.GetKey("left"))
             rb.AddForce(-sidewaysForce* Time.deltaTime,0, 0, ForceMode.VelocityChange);
-        else if(Input.GetKey("space")  && jump_enable)
-            rb.AddForce(0, 5*forwardForce * Time.deltaTime, 0);
         else
         {
             rb.AddForce(0* Time.deltaTime,0, 0, ForceMode.VelocityChange);
-            rb.AddForce(0, -5*forwardForce * Time.deltaTime, 0);
         }
+        
+        if(Input.GetKey("space")  && jump_enable)
+            rb.AddForce(0, 5*forwardForce * Time.deltaTime, 0);
+        else
+            rb.AddForce(0, -5*forwardForce * Time.deltaTime, 0);
     }
 }
