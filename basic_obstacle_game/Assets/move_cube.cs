@@ -7,6 +7,7 @@ public class move_cube : MonoBehaviour
     public Rigidbody rb;
     public float forwardForce = 80f;
     public float sidewaysForce = 50f;
+    bool jump_enable = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,19 +19,26 @@ public class move_cube : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //  // rb.AddForce(0,0,2000);
-        // rb.AddForce(0,0, 1000 * Time.deltaTime);
+         if(transform.position[1] < 2.0)
+            jump_enable = true;
+        if(transform.position[1] >= 13)
+            jump_enable = false;
     }
 
      void FixedUpdate()
     {
-         // rb.AddForce(0,0,2000);
+        // rb.AddForce(0,0,2000);
         rb.AddForce(0,0, forwardForce * Time.deltaTime);
         if(Input.GetKey("right"))
             rb.AddForce(sidewaysForce* Time.deltaTime,0, 0, ForceMode.VelocityChange);
         else if(Input.GetKey("left"))
             rb.AddForce(-sidewaysForce* Time.deltaTime,0, 0, ForceMode.VelocityChange);
+        else if(Input.GetKey("space")  && jump_enable)
+            rb.AddForce(0, 5*forwardForce * Time.deltaTime, 0);
         else
+        {
             rb.AddForce(0* Time.deltaTime,0, 0, ForceMode.VelocityChange);
+            rb.AddForce(0, -5*forwardForce * Time.deltaTime, 0);
+        }
     }
 }
