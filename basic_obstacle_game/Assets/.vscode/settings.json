@@ -1,7 +1,0 @@
-{
-    "files.exclude": {
-        "*.mat": true,
-        "*.meta": true,
-        "*.physicMaterial": true
-    }
-}
