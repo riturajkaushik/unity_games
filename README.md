@@ -1,7 +1,7 @@
 # Unity Games
 
-Some fun projects done as a part of testing Unity for game development
+**Some fun projects done as a part of testing Unity for game development**
 
-* Basic obstacle game
+* Basic obstacle game (Work in progress)
   
   ![](gifs/basic_obstacle_game.gif)
